@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chérie Restaurant — Fine Dining in DHA Karachi</title>
+<meta name="description" content="Chérie Restaurant — Fine dining in Bukhari Commercial, DHA Phase 6, Karachi. Open until 1 AM. Reserve your table today.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #F9F4EE;
+    --warm-white: #FDF9F5;
+    --gold: #B8924A;
+    --gold-light: #D4A96A;
+    --dark: #1A1208;
+    --charcoal: #2E2416;
+    --text-muted: #7A6A55;
+    --border: rgba(184,146,74,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(249,244,238,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); font-style: italic; }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.6rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.25s;
+    font-weight: 500;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--cream); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 2rem 5rem;
+    background: var(--warm-white);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 30%, rgba(184,146,74,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(184,146,74,0.06) 0%, transparent 60%);
+  }
+
+  /* decorative corner ornaments */
+  .hero-corner {
+    position: absolute;
+    width: 120px; height: 120px;
+    opacity: 0.18;
+  }
+  .hero-corner svg { width: 100%; height: 100%; }
+  .hero-corner.tl { top: 5rem; left: 3rem; }
+  .hero-corner.tr { top: 5rem; right: 3rem; transform: scaleX(-1); }
+  .hero-corner.bl { bottom: 3rem; left: 3rem; transform: scaleY(-1); }
+  .hero-corner.br { bottom: 3rem; right: 3rem; transform: scale(-1); }
+
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.9s ease both;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    animation: fadeUp 0.9s 0.12s ease both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 1.8rem;
+    letter-spacing: 0.05em;
+    animation: fadeUp 0.9s 0.24s ease both;
+  }
+
+  .hero-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 2rem auto;
+    width: 200px;
+    animation: fadeUp 0.9s 0.36s ease both;
+  }
+  .hero-divider::before,
+  .hero-divider::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .hero-divider-gem {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  .hero-info {
+    display: flex; gap: 3rem; align-items: center;
+    animation: fadeUp 0.9s 0.48s ease both;
+  }
+  .hero-info-sep { width: 1px; height: 32px; background: var(--border); }
+  .hero-info-item { display: flex; flex-direction: column; gap: 0.3rem; align-items: center; }
+  .hero-info-item .label {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .hero-info-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; color: var(--dark); font-weight: 400;
+  }
+  .hero-info-item .value.gold { color: var(--gold); }
+
+  .hero-btns {
+    display: flex; gap: 1.2rem; margin-top: 2.8rem;
+    animation: fadeUp 0.9s 0.6s ease both;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.8rem;
+    background: var(--gold); color: var(--cream);
+    text-decoration: none; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--charcoal); }
+
+  .btn-outline {
+    padding: 0.9rem 2.8rem;
+    border: 1px solid var(--gold); color: var(--gold);
+    text-decoration: none; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--cream); }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 7rem 2rem; }
+
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1rem; text-align: center;
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: ''; display: inline-block;
+    width: 32px; height: 0.5px; background: var(--gold); opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 300; text-align: center;
+    line-height: 1.1; color: var(--dark); margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .section-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.12rem; font-style: italic;
+    color: var(--text-muted); text-align: center;
+    max-width: 530px; margin: 0 auto 4.5rem;
+    line-height: 1.8;
+  }
+
+  /* ─── ABOUT ─── */
+  .about { background: var(--warm-white); }
+  .about-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+
+  .about-visual { position: relative; height: 500px; }
+
+  .about-card {
+    position: absolute;
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    padding: 2rem;
+  }
+  .about-card-main {
+    width: 78%; height: 370px;
+    top: 0; left: 0;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .about-card-main svg { width: 100%; height: 100%; }
+  .about-card-accent {
+    width: 55%; bottom: 0; right: 0;
+    background: var(--gold); color: var(--cream);
+    text-align: center; padding: 1.8rem;
+  }
+  .about-card-accent .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 300; line-height: 1; display: block;
+  }
+  .about-card-accent .small-text {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.85; margin-top: 0.5rem; display: block;
+  }
+
+  .about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+    line-height: 1.15; margin-bottom: 1.5rem; color: var(--dark);
+  }
+  .about-text h2 em { font-style: italic; color: var(--gold); }
+  .about-text p { font-size: 0.94rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.2rem; }
+
+  .about-details {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+  }
+  .detail-item { padding: 1rem; border: 0.5px solid var(--border); background: var(--warm-white); }
+  .detail-item .d-label {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .detail-item .d-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--dark); }
+
+  /* ─── MENU ─── */
+  .menu-section { background: var(--cream); }
+  .menu-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+  }
+  .menu-category {
+    background: var(--warm-white); padding: 2.8rem 2.2rem;
+    transition: transform 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .menu-category:hover {
+    transform: translateY(-5px);
+    background: var(--charcoal);
+  }
+  .menu-category:hover .menu-cat-label { color: var(--gold-light); }
+  .menu-category:hover .menu-cat-name,
+  .menu-category:hover .menu-item-name { color: var(--cream); }
+  .menu-category:hover .menu-cat-desc,
+  .menu-category:hover .menu-item-price { color: rgba(255,255,255,0.55); }
+  .menu-category:hover .menu-item { border-color: rgba(255,255,255,0.1); }
+
+  .menu-cat-icon {
+    font-size: 1.4rem; color: var(--gold);
+    margin-bottom: 1rem; display: block;
+  }
+  .menu-cat-label {
+    font-size: 0.62rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .menu-cat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem; font-weight: 300; color: var(--dark); margin-bottom: 0.6rem;
+  }
+  .menu-cat-desc {
+    font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem;
+  }
+  .menu-items { border-top: 0.5px solid var(--border); }
+  .menu-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.85rem 0; border-bottom: 0.5px solid var(--border);
+  }
+  .menu-item-name { font-size: 0.87rem; color: var(--dark); font-weight: 400; }
+  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); }
+
+  /* ─── EXPERIENCE ─── */
+  .experience { background: var(--charcoal); }
+  .exp-inner { max-width: 1100px; margin: 0 auto; }
+  .exp-inner .section-label { color: var(--gold-light); }
+  .exp-inner .section-label::before,
+  .exp-inner .section-label::after { background: var(--gold-light); }
+  .exp-inner .section-title { color: var(--cream); }
+  .exp-inner .section-intro { color: rgba(255,255,255,0.45); }
+
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px;
+  }
+  .exp-item {
+    padding: 3rem 1.8rem; text-align: center;
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(255,255,255,0.07);
+    transition: background 0.3s;
+  }
+  .exp-item:hover { background: rgba(184,146,74,0.14); }
+  .exp-icon { font-size: 1.6rem; color: var(--gold); margin-bottom: 1.2rem; display: block; }
+  .exp-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 300; color: var(--cream); margin-bottom: 0.7rem;
+  }
+  .exp-item p { font-size: 0.8rem; color: rgba(255,255,255,0.42); line-height: 1.75; }
+
+  /* ─── GALLERY STRIP ─── */
+  .gallery-strip { background: var(--warm-white); padding: 5rem 0; overflow: hidden; }
+  .gallery-strip-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .gallery-strip .section-label { margin-bottom: 3rem; }
+
+  .gallery-track {
+    display: flex; gap: 1.5px;
+  }
+  .gallery-tile {
+    flex: 1; min-width: 0;
+    aspect-ratio: 3/4;
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    transition: flex 0.4s ease;
+    position: relative;
+  }
+  .gallery-tile:hover { flex: 2; }
+  .gallery-tile svg { width: 100%; height: 100%; }
+  .gallery-tile-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(26,18,8,0.7);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+  .gallery-tile:hover .gallery-tile-label { transform: translateY(0); }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { background: var(--cream); }
+  .test-inner { max-width: 1100px; margin: 0 auto; }
+  .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .test-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--border);
+    padding: 2.2rem;
+    transition: transform 0.3s;
+  }
+  .test-card:hover { transform: translateY(-4px); }
+  .test-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 1.1rem; }
+  .test-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic;
+    color: var(--charcoal); line-height: 1.75; margin-bottom: 1.4rem;
+  }
+  .test-author { display: flex; align-items: center; gap: 0.8rem; }
+  .test-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 500; color: var(--cream);
+    letter-spacing: 0.05em;
+  }
+  .test-name { font-size: 0.82rem; font-weight: 500; color: var(--dark); }
+  .test-date { font-size: 0.72rem; color: var(--text-muted); }
+
+  /* ─── RESERVATION ─── */
+  .reservation { background: var(--warm-white); }
+  .res-inner { max-width: 720px; margin: 0 auto; }
+
+  .res-form {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 2rem;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label {
+    font-size: 0.62rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.85rem 1rem;
+    border: 0.5px solid var(--border);
+    background: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem; color: var(--dark); outline: none;
+    transition: border-color 0.2s;
+    appearance: none; -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8924A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .form-submit {
+    grid-column: 1 / -1;
+    padding: 1.1rem;
+    background: var(--gold); color: var(--cream);
+    border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500;
+    transition: background 0.25s; margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--charcoal); }
+
+  .res-alt {
+    text-align: center; margin-top: 2rem;
+    font-size: 0.85rem; color: var(--text-muted);
+  }
+  .res-alt a { color: var(--gold); text-decoration: none; font-weight: 500; }
+
+  /* ─── MAP STRIP ─── */
+  .map-strip { background: var(--charcoal); padding: 5rem 2rem; }
+  .map-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .map-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+    color: var(--cream); margin-bottom: 2rem; line-height: 1.1;
+  }
+  .map-info h2 em { font-style: italic; color: var(--gold); }
+  .map-detail { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+  .map-detail-icon { color: var(--gold); font-size: 1rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .map-detail-text { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .map-detail-text strong { color: rgba(255,255,255,0.8); font-weight: 500; display: block; margin-bottom: 0.1rem; }
+  .map-cta {
+    display: inline-block; margin-top: 1.5rem;
+    padding: 0.85rem 2.2rem;
+    border: 1px solid var(--gold); color: var(--gold);
+    text-decoration: none; font-size: 0.7rem;
+    letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+    transition: all 0.25s;
+  }
+  .map-cta:hover { background: var(--gold); color: var(--cream); }
+
+  .map-visual {
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .map-visual svg { width: 100%; height: 100%; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.45);
+    padding: 5rem 2rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem; padding-bottom: 3.5rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300;
+    color: var(--cream); display: block; margin-bottom: 1.2rem;
+  }
+  .footer-logo em { color: var(--gold); font-style: italic; }
+  .footer-brand p { font-size: 0.83rem; line-height: 1.85; max-width: 260px; }
+  .footer-social { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 0.75rem;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+
+  .footer-col h4 {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 1.4rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.65rem; }
+  .footer-col ul li a {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-col p { font-size: 0.85rem; line-height: 1.9; }
+  .footer-col a { color: var(--gold-light); text-decoration: none; }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.72rem;
+  }
+  .footer-bottom span:last-child { color: var(--gold-light); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    background: var(--charcoal); color: var(--cream);
+    padding: 1rem 1.8rem; font-size: 0.82rem;
+    border-left: 3px solid var(--gold);
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .toast.show { transform: translateX(0); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .about-inner,
+    .map-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { height: 300px; }
+    .about-card-main { height: 230px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .test-grid { grid-template-columns: 1fr; }
+    .gallery-track { flex-wrap: wrap; }
+    .gallery-tile { flex-basis: calc(50% - 1px); }
+    .res-form { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+    .hero-corner { display: none; }
+    .hero-info { gap: 1.5rem; }
+  }
+
+  @media (max-width: 550px) {
+    .hero-btns { flex-direction: column; align-items: center; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✦ Reservation request received. We'll confirm shortly!</div>
+
+<!-- ─── NAVIGATION ─── -->
+<nav>
+  <a href="#home" class="nav-logo">Ché<span>rie</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+  </ul>
+  <a href="tel:03082355566" class="nav-cta">+92 308 235 5566</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+
+  <!-- Corner ornaments -->
+  <div class="hero-corner tl">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 L5 50" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L50 5" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L25 25" stroke="#B8924A" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="5" cy="5" r="3" fill="#B8924A"/>
+      <circle cx="5" cy="50" r="1.5" fill="#B8924A" opacity="0.5"/>
+      <circle cx="50" cy="5" r="1.5" fill="#B8924A" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-corner tr">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 L5 50" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L50 5" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L25 25" stroke="#B8924A" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="5" cy="5" r="3" fill="#B8924A"/>
+      <circle cx="5" cy="50" r="1.5" fill="#B8924A" opacity="0.5"/>
+      <circle cx="50" cy="5" r="1.5" fill="#B8924A" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-corner bl">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 L5 50" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L50 5" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L25 25" stroke="#B8924A" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="5" cy="5" r="3" fill="#B8924A"/>
+      <circle cx="5" cy="50" r="1.5" fill="#B8924A" opacity="0.5"/>
+      <circle cx="50" cy="5" r="1.5" fill="#B8924A" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-corner br">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 L5 50" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L50 5" stroke="#B8924A" stroke-width="0.8"/>
+      <path d="M5 5 L25 25" stroke="#B8924A" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="5" cy="5" r="3" fill="#B8924A"/>
+      <circle cx="5" cy="50" r="1.5" fill="#B8924A" opacity="0.5"/>
+      <circle cx="50" cy="5" r="1.5" fill="#B8924A" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <div class="hero-ornament">Bukhari Commercial &nbsp;·&nbsp; DHA Phase 6 &nbsp;·&nbsp; Karachi</div>
+
+  <h1 class="hero-title">
+    A Table
+    <em>Worth Returning To</em>
+  </h1>
+
+  <p class="hero-subtitle">Where every dish tells a story and every evening becomes a memory</p>
+
+  <div class="hero-divider"><div class="hero-divider-gem"></div></div>
+
+  <div class="hero-info">
+    <div class="hero-info-item">
+      <span class="label">Rating</span>
+      <span class="value gold">★ 4.4 / 5</span>
+    </div>
+    <div class="hero-info-sep"></div>
+    <div class="hero-info-item">
+      <span class="label">Hours</span>
+      <span class="value">Open · Until 1 AM</span>
+    </div>
+    <div class="hero-info-sep"></div>
+    <div class="hero-info-item">
+      <span class="label">Price Range</span>
+      <span class="value">Rs 2,000 – 7,000</span>
+    </div>
+  </div>
+
+  <div class="hero-btns">
+    <a href="#reservation" class="btn-primary">Reserve a Table</a>
+    <a href="#menu" class="btn-outline">Explore Menu</a>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <div class="about-visual reveal">
+      <div class="about-card about-card-main">
+        <svg viewBox="0 0 300 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="290" fill="#F9F4EE"/>
+          <!-- table surface -->
+          <ellipse cx="150" cy="195" rx="95" ry="32" fill="#D4A96A" opacity="0.18"/>
+          <rect x="115" y="183" width="70" height="9" rx="2" fill="#B8924A" opacity="0.35"/>
+          <rect x="143" y="192" width="14" height="52" rx="2" fill="#B8924A" opacity="0.25"/>
+          <!-- candle -->
+          <rect x="147" y="148" width="6" height="36" rx="1" fill="#EDD9A3"/>
+          <ellipse cx="150" cy="145" rx="4" ry="6" fill="#B8924A" opacity="0.65"/>
+          <!-- flame -->
+          <ellipse cx="150" cy="138" rx="2.5" ry="4" fill="#D4A96A" opacity="0.8"/>
+          <!-- left plate -->
+          <ellipse cx="105" cy="186" rx="26" ry="9" fill="#FDF9F5" stroke="#D4A96A" stroke-width="1"/>
+          <ellipse cx="105" cy="186" rx="17" ry="6" fill="#EDD9A3" opacity="0.55"/>
+          <!-- right plate -->
+          <ellipse cx="195" cy="186" rx="26" ry="9" fill="#FDF9F5" stroke="#D4A96A" stroke-width="1"/>
+          <ellipse cx="195" cy="186" rx="17" ry="6" fill="#EDD9A3" opacity="0.55"/>
+          <!-- wine glass left -->
+          <path d="M122 170 L120 150 L130 150 L128 170" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.5"/>
+          <ellipse cx="125" cy="170" rx="7" ry="2.5" fill="#B8924A" opacity="0.25"/>
+          <line x1="125" y1="150" x2="125" y2="143" stroke="#B8924A" stroke-width="0.8" opacity="0.5"/>
+          <!-- wine glass right -->
+          <path d="M172 170 L170 150 L180 150 L178 170" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.5"/>
+          <ellipse cx="175" cy="170" rx="7" ry="2.5" fill="#B8924A" opacity="0.25"/>
+          <line x1="175" y1="150" x2="175" y2="143" stroke="#B8924A" stroke-width="0.8" opacity="0.5"/>
+          <!-- cutlery left -->
+          <line x1="88" y1="173" x2="88" y2="202" stroke="#B8924A" stroke-width="1" opacity="0.4"/>
+          <line x1="93" y1="173" x2="93" y2="202" stroke="#B8924A" stroke-width="1" opacity="0.3"/>
+          <!-- cutlery right -->
+          <line x1="207" y1="173" x2="207" y2="202" stroke="#B8924A" stroke-width="1" opacity="0.4"/>
+          <!-- decorative title -->
+          <text x="150" y="92" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="30" fill="#B8924A" opacity="0.12" font-style="italic">Chérie</text>
+          <text x="150" y="118" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="10" fill="#7A6A55" letter-spacing="4" opacity="0.55">RESTAURANT</text>
+          <!-- decorative lines -->
+          <line x1="70" y1="130" x2="230" y2="130" stroke="#D4A96A" stroke-width="0.5" opacity="0.25"/>
+          <line x1="70" y1="240" x2="230" y2="240" stroke="#D4A96A" stroke-width="0.5" opacity="0.25"/>
+          <circle cx="150" cy="240" r="3" fill="#B8924A" opacity="0.35"/>
+          <circle cx="130" cy="240" r="1.5" fill="#B8924A" opacity="0.2"/>
+          <circle cx="170" cy="240" r="1.5" fill="#B8924A" opacity="0.2"/>
+          <!-- corner dots -->
+          <circle cx="30" cy="30" r="2" fill="#B8924A" opacity="0.2"/>
+          <circle cx="270" cy="30" r="2" fill="#B8924A" opacity="0.2"/>
+          <circle cx="30" cy="260" r="2" fill="#B8924A" opacity="0.2"/>
+          <circle cx="270" cy="260" r="2" fill="#B8924A" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="about-card about-card-accent">
+        <span class="big-num">4.4★</span>
+        <span class="small-text">Out of 100+ Reviews</span>
+      </div>
+    </div>
+
+    <div class="about-text reveal">
+      <p class="section-label" style="justify-content:flex-start; text-align:left;">Our Story</p>
+      <h2>Fine Dining<br>in the <em>Heart of DHA</em></h2>
+      <p>Nestled in the vibrant Bukhari Commercial Area of DHA Phase 6, Chérie is where Karachi's love for exceptional food meets an atmosphere of refined elegance.</p>
+      <p>From carefully sourced ingredients to meticulously crafted plates, every detail at Chérie is an expression of our passion — for food, for hospitality, and for the art of a perfect evening.</p>
+      <p>We believe dining is theatre, and every night is a performance worth remembering.</p>
+      <div class="about-details">
+        <div class="detail-item">
+          <div class="d-label">Location</div>
+          <div class="d-value">DHA Phase 6, Karachi</div>
+        </div>
+        <div class="detail-item">
+          <div class="d-label">Hours</div>
+          <div class="d-value">Open · Until 1:00 AM</div>
+        </div>
+        <div class="detail-item">
+          <div class="d-label">Phone</div>
+          <div class="d-value">+92 308 235 5566</div>
+        </div>
+        <div class="detail-item">
+          <div class="d-label">Price Range</div>
+          <div class="d-value">Rs 2,000 – 7,000</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── MENU ─── -->
+<section class="menu-section" id="menu">
+  <p class="section-label reveal">Culinary Selection</p>
+  <h2 class="section-title reveal">Crafted with <em>Passion</em></h2>
+  <p class="section-intro reveal">Each dish celebrates flavor, freshness, and artistry — prepared to delight even the most discerning palate.</p>
+
+  <!-- Menu Tab Nav -->
+  <div class="menu-tabs reveal" id="menuTabs">
+    <button class="menu-tab active" onclick="showTab('starters')">Starters & Soups</button>
+    <button class="menu-tab" onclick="showTab('mains')">Mains</button>
+    <button class="menu-tab" onclick="showTab('pizza')">Pizza & Pasta</button>
+    <button class="menu-tab" onclick="showTab('seafood')">Seafood</button>
+    <button class="menu-tab" onclick="showTab('burgers')">Burgers & Sandwiches</button>
+    <button class="menu-tab" onclick="showTab('desserts')">Desserts</button>
+    <button class="menu-tab" onclick="showTab('drinks')">Drinks</button>
+  </div>
+
+  <!-- STARTERS & SOUPS -->
+  <div class="menu-panel" id="tab-starters">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">To Begin</div>
+        <div class="menu-cat-name">Starters</div>
+        <div class="menu-cat-desc">Bold bites crafted to awaken the senses and set the tone for the evening ahead.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Trio Fries <span class="badge-popular">★ Most Liked</span></span><span class="menu-item-price">Rs 1,490</span></div>
+          <div class="menu-item menu-item-desc"><span class="menu-item-name">Crispy Chicken Stick</span><span class="menu-item-price">Rs 1,645</span></div>
+          <div class="menu-item-sub">Crispy coated fried chicken strips served with chipotle sauce &amp; caper mayo</div>
+          <div class="menu-item"><span class="menu-item-name">Caesar Salad</span><span class="menu-item-price">Rs 1,390</span></div>
+          <div class="menu-item"><span class="menu-item-name">Fresh Fruit Salad</span><span class="menu-item-price">Rs 1,395</span></div>
+          <div class="menu-item"><span class="menu-item-name">Chicken Burrito Bowl</span><span class="menu-item-price">Rs 1,990</span></div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">◈</span>
+        <div class="menu-cat-label">Warm &amp; Comforting</div>
+        <div class="menu-cat-name">Soups</div>
+        <div class="menu-cat-desc">Slow-crafted broths and creamy blends to warm the soul before the main event.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Hungarian Mushroom Soup</span><span class="menu-item-price">Rs 745</span></div>
+          <div class="menu-item-sub">Creamy, flavorful soup with mushrooms, spices, and a hint of paprika</div>
+          <div class="menu-item"><span class="menu-item-name">Cream Chowder Soup</span><span class="menu-item-price">Rs 745</span></div>
+          <div class="menu-item-sub">Creamy, rich soup with a blend of vegetables and savory flavors</div>
+        </div>
+      </div>
+      <div class="menu-category menu-category-empty">
+        <span class="menu-cat-icon" style="opacity:0.2">◆</span>
+        <div class="menu-cat-label">House Favourite</div>
+        <div class="menu-cat-name">Trio Fries</div>
+        <div class="menu-cat-desc">Our #1 most liked starter — bolognaise, cheese, mushroom &amp; kimchi loaded fries. A must-try.</div>
+        <div style="margin-top:1.5rem; padding:1.2rem; border:0.5px solid var(--border); text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--gold);">Rs 1,490</div>
+          <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Per Serving</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="menu-panel hidden" id="tab-mains">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">◆</span>
+        <div class="menu-cat-label">Premium Cuts</div>
+        <div class="menu-cat-name">Steaks</div>
+        <div class="menu-cat-desc">Carefully grilled cuts paired with rich sauces and seasonal sides.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Roasted Pepper Steak <span class="badge-popular">★ Top 3</span></span><span class="menu-item-price">Rs 2,890</span></div>
+          <div class="menu-item-sub">Grilled sliced tenderloin with roasted bell pepper sauce, sautéed vegetables &amp; mashed potatoes</div>
+          <div class="menu-item"><span class="menu-item-name">Red Chimichurri Steak</span><span class="menu-item-price">Rs 2,990</span></div>
+          <div class="menu-item-sub">Grilled undercut with red chimichurri, mixed green, sautéed potatoes &amp; burnt chili</div>
+          <div class="menu-item"><span class="menu-item-name">Sous Vide Jalapeño Steak</span><span class="menu-item-price">Rs 2,790</span></div>
+          <div class="menu-item-sub">Grilled mandolin with jalapeño sauce, sautéed vegetables &amp; mashed potatoes</div>
+          <div class="menu-item"><span class="menu-item-name">Garlic Butter Steak</span><span class="menu-item-price">Rs 2,880</span></div>
+          <div class="menu-item-sub">Marinated grilled tenderloin with roasted aged garlic butter, sautéed vegetables &amp; mashed potatoes</div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">Poultry</div>
+        <div class="menu-cat-name">Chicken</div>
+        <div class="menu-cat-desc">Grilled, crusted, and sauced — three ways to enjoy the finest chicken dishes.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Moroccan Chicken</span><span class="menu-item-price">Rs 1,690</span></div>
+          <div class="menu-item-sub">Grilled chicken with sambal chili sauce, garlic rice &amp; sautéed veggies</div>
+          <div class="menu-item"><span class="menu-item-name">Parmesan Chicken</span><span class="menu-item-price">Rs 1,650</span></div>
+          <div class="menu-item-sub">Parmesan crusted fillet with sautéed vegetables &amp; mashed potatoes in whole grain mustard sauce</div>
+          <div class="menu-item"><span class="menu-item-name">Tarragon Chicken</span><span class="menu-item-price">Rs 1,650</span></div>
+          <div class="menu-item-sub">Grilled fillet with spicy tarragon sauce, sautéed vegetables &amp; garlic rice</div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">◈</span>
+        <div class="menu-cat-label">Noodle &amp; Rice</div>
+        <div class="menu-cat-name">Macaroni &amp; Spaghetti</div>
+        <div class="menu-cat-desc">Comfort classics with a Chérie twist — rich, sauced and deeply satisfying.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Mac &amp; Cheese Macaroni</span><span class="menu-item-price">Rs 1,550</span></div>
+          <div class="menu-item-sub">Macaroni with homemade cheese sauce served with crispy chicken shorts</div>
+          <div class="menu-item"><span class="menu-item-name">Lemon Prawns Spaghetti</span><span class="menu-item-price">Rs 1,790</span></div>
+          <div class="menu-item-sub">Spaghetti with sautéed Italian prawn, lime, red chili, fresh coriander &amp; cherry tomato</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIZZA & PASTA -->
+  <div class="menu-panel hidden" id="tab-pizza">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">Stone Baked</div>
+        <div class="menu-cat-name">Pizza</div>
+        <div class="menu-cat-desc">Five signature pizzas — from crowd-pleasing classics to adventurous originals.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Margherita Pizza <span class="badge-popular">★ Top 2</span></span><span class="menu-item-price">Rs 1,420</span></div>
+          <div class="menu-item-sub">Homemade plum tomato sauce, mozzarella, cheddar, parmesan, tomato &amp; fresh basil</div>
+          <div class="menu-item"><span class="menu-item-name">Fajita Pizza</span><span class="menu-item-price">Rs 1,595</span></div>
+          <div class="menu-item-sub">Plum tomato sauce, mozzarella, cheddar, jalapeño, onion, tomato &amp; spiced grilled chicken</div>
+          <div class="menu-item"><span class="menu-item-name">Pepperoni Pizza</span><span class="menu-item-price">Rs 1,585</span></div>
+          <div class="menu-item-sub">Chipotle hot sauce, mozzarella, cheddar, parmesan &amp; pepperoni slices</div>
+          <div class="menu-item"><span class="menu-item-name">Fig &amp; Feta Pizza</span><span class="menu-item-price">Rs 1,490</span></div>
+          <div class="menu-item-sub">Walnut pesto, parmesan, mozzarella, caramelized onion, sautéed spinach fig &amp; chicken</div>
+          <div class="menu-item"><span class="menu-item-name">Jalapeño Chicken Pizza</span><span class="menu-item-price">Rs 1,545</span></div>
+          <div class="menu-item-sub">Jalapeño sauce, mozzarella, cheddar, chicken, olives, green chili, onion &amp; capsicum</div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">◈</span>
+        <div class="menu-cat-label">Al Dente</div>
+        <div class="menu-cat-name">Pasta</div>
+        <div class="menu-cat-desc">Rich sauces, premium proteins and perfectly cooked pasta — Italian soul, Chérie character.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Alfredo Pasta</span><span class="menu-item-price">Rs 1,790</span></div>
+          <div class="menu-item-sub">Penne with turkey bacon or grilled chicken in creamy alfredo, black olives &amp; parmesan</div>
+          <div class="menu-item"><span class="menu-item-name">Penne Arrabiata</span><span class="menu-item-price">Rs 1,645</span></div>
+          <div class="menu-item-sub">Penne in tomato concasse sauce, chargrilled chicken, black olives &amp; parmesan</div>
+          <div class="menu-item"><span class="menu-item-name">Sriracha Chicken Pasta</span><span class="menu-item-price">Rs 1,765</span></div>
+          <div class="menu-item-sub">Spaghetti with creamy sriracha sauce, cherry tomato, Thai chili &amp; grilled chicken</div>
+        </div>
+      </div>
+      <div class="menu-category menu-category-empty">
+        <span class="menu-cat-icon" style="opacity:0.2">◆</span>
+        <div class="menu-cat-label">Chef Recommends</div>
+        <div class="menu-cat-name">Try the Fig &amp; Feta</div>
+        <div class="menu-cat-desc">Our most distinctive pizza — walnut pesto, fig, caramelised onion and chicken. Unlike anything you've had before.</div>
+        <div style="margin-top:1.5rem; padding:1.2rem; border:0.5px solid var(--border); text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--gold);">Rs 1,490</div>
+          <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Per Pizza</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEAFOOD -->
+  <div class="menu-panel hidden" id="tab-seafood">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">From the Sea</div>
+        <div class="menu-cat-name">Seafood</div>
+        <div class="menu-cat-desc">The freshest catch, prepared with intention and served with elegance.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Dynamite Prawns</span><span class="menu-item-price">Rs 1,795</span></div>
+          <div class="menu-item-sub">Battered prawns with dynamite mayo served with rice cracker</div>
+          <div class="menu-item"><span class="menu-item-name">Fish &amp; Chips</span><span class="menu-item-price">Rs 1,695</span></div>
+          <div class="menu-item-sub">Crispy fried snapper strips with fries, dill aioli, tartar sauce &amp; lemon wedge</div>
+          <div class="menu-item"><span class="menu-item-name">Grilled Tiger Prawns</span><span class="menu-item-price">Rs 2,900</span></div>
+          <div class="menu-item-sub">Shell-on tiger prawns with mixed green, sautéed vegetables, mashed potatoes &amp; hoisin butter sauce</div>
+          <div class="menu-item"><span class="menu-item-name">Lemon Butter Fish</span><span class="menu-item-price">Rs 1,860</span></div>
+          <div class="menu-item-sub">Pan-seared snapper fillet with sautéed vegetables, mashed potatoes &amp; lemon butter sauce</div>
+          <div class="menu-item"><span class="menu-item-name">Italian Fish</span><span class="menu-item-price">Rs 1,890</span></div>
+          <div class="menu-item-sub">Grilled red snapper fillet with Italian butter sauce, sautéed vegetables &amp; mashed potatoes</div>
+          <div class="menu-item"><span class="menu-item-name">Pan Seared Pocket Fish</span><span class="menu-item-price">Rs 1,890</span></div>
+          <div class="menu-item-sub">Stuffed red snapper on sautéed vegetables, topped with spinach caper sauce &amp; mashed potatoes</div>
+        </div>
+      </div>
+      <div class="menu-category menu-category-empty" style="grid-column:span 2;">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;">
+          <div style="padding:1.5rem; background:var(--cream); border:0.5px solid var(--border); text-align:center;">
+            <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Starter</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--dark);">Dynamite Prawns</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--gold); margin-top:0.5rem;">Rs 1,795</div>
+          </div>
+          <div style="padding:1.5rem; background:var(--charcoal); border:0.5px solid var(--border); text-align:center;">
+            <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem;">Premium</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--cream);">Grilled Tiger Prawns</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--gold-light); margin-top:0.5rem;">Rs 2,900</div>
+          </div>
+          <div style="padding:1.5rem; background:var(--cream); border:0.5px solid var(--border); text-align:center;">
+            <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Signature</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--dark);">Pocket Fish</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--gold); margin-top:0.5rem;">Rs 1,890</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BURGERS & SANDWICHES -->
+  <div class="menu-panel hidden" id="tab-burgers">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">◆</span>
+        <div class="menu-cat-label">Hand Pressed</div>
+        <div class="menu-cat-name">Burgers</div>
+        <div class="menu-cat-desc">Grilled perfection in every bite — bold patties, premium toppings, signature sauces.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Grilled Chicken Burger</span><span class="menu-item-price">Rs 1,485</span></div>
+          <div class="menu-item-sub">Grilled chicken with lettuce, iceberg, chipotle sauce, onion ring, tomato, jalapeño &amp; cheddar</div>
+          <div class="menu-item"><span class="menu-item-name">Roasted Pepper Beef Burger</span><span class="menu-item-price">Rs 1,495</span></div>
+          <div class="menu-item-sub">Smashed beef with Chérie pepper glaze mayo, lettuce, iceberg, onion ring, roasted bell pepper, turkey bacon &amp; cheddar</div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">✧</span>
+        <div class="menu-cat-label">Artisan Bread</div>
+        <div class="menu-cat-name">Sandwiches</div>
+        <div class="menu-cat-desc">Generously stacked on rustic ciabatta — built for those who want more from a sandwich.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Habanero Beef Sandwich</span><span class="menu-item-price">Rs 1,670</span></div>
+          <div class="menu-item-sub">Mandolin beef slice with habanero mayo, orange cheddar &amp; turkey bacon on rustic ciabatta</div>
+          <div class="menu-item"><span class="menu-item-name">The Chérie Club Sandwich</span><span class="menu-item-price">Rs 1,650</span></div>
+          <div class="menu-item-sub">Grilled chicken, turkey bacon, omelette, tomatoes, lettuce, iceberg, pepperoni, orange cheddar &amp; cucumber with relish mayo</div>
+        </div>
+      </div>
+      <div class="menu-category menu-category-empty">
+        <span class="menu-cat-icon" style="opacity:0.2">◈</span>
+        <div class="menu-cat-label">House Signature</div>
+        <div class="menu-cat-name">The Chérie Club</div>
+        <div class="menu-cat-desc">Seven layers of flavor — our most iconic sandwich. The one everyone orders twice.</div>
+        <div style="margin-top:1.5rem; padding:1.2rem; border:0.5px solid var(--border); text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--gold);">Rs 1,650</div>
+          <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem;">Per Serving</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-panel hidden" id="tab-desserts">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">Sweet Endings</div>
+        <div class="menu-cat-name">Desserts</div>
+        <div class="menu-cat-desc">The perfect close to an unforgettable evening — indulgent, beautiful, memorable.</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Matilda Cake</span><span class="menu-item-price">Rs 1,495</span></div>
+          <div class="menu-item-sub">Rich, moist chocolate cake layered with creamy frosting and chocolate shavings</div>
+          <div class="menu-item"><span class="menu-item-name">Cheese Cake</span><span class="menu-item-price">Rs 1,490</span></div>
+          <div class="menu-item-sub">Creamy, sweet dessert with a crumbly base, often topped with fruit or chocolate</div>
+          <div class="menu-item"><span class="menu-item-name">Tres Leches Cake</span><span class="menu-item-price">Rs 1,190</span></div>
+          <div class="menu-item-sub">Moist, sweet cake soaked in three types of milk, topped with whipped cream</div>
+        </div>
+      </div>
+      <div class="menu-category menu-category-empty" style="grid-column:span 2;">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;">
+          <div style="padding:1.8rem; background:var(--charcoal); text-align:center;">
+            <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.6rem;">Chocolate</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--cream);">Matilda Cake</div>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.4rem; line-height:1.5;">Rich dark chocolate, creamy frosting</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold); margin-top:0.8rem;">Rs 1,495</div>
+          </div>
+          <div style="padding:1.8rem; background:var(--gold); text-align:center;">
+            <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(26,18,8,0.6); margin-bottom:0.6rem;">Signature</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--dark);">Cheese Cake</div>
+            <div style="font-size:0.8rem; color:rgba(26,18,8,0.6); margin-top:0.4rem; line-height:1.5;">Crumbly base, fruit topping</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--dark); margin-top:0.8rem;">Rs 1,490</div>
+          </div>
+          <div style="padding:1.8rem; background:var(--charcoal); text-align:center;">
+            <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.6rem;">Classic</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--cream);">Tres Leches</div>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.4rem; line-height:1.5;">Three-milk soak, whipped cream</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold); margin-top:0.8rem;">Rs 1,190</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="menu-panel hidden" id="tab-drinks">
+    <div class="menu-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="menu-category">
+        <span class="menu-cat-icon">◈</span>
+        <div class="menu-cat-label">Shaken</div>
+        <div class="menu-cat-name">Mojitos</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Blue Lagoon</span><span class="menu-item-price">Rs 895</span></div>
+          <div class="menu-item"><span class="menu-item-name">Passion Fruit</span><span class="menu-item-price">Rs 895</span></div>
+          <div class="menu-item"><span class="menu-item-name">Kiwi</span><span class="menu-item-price">Rs 895</span></div>
+          <div class="menu-item"><span class="menu-item-name">Strawberry</span><span class="menu-item-price">Rs 895</span></div>
+          <div class="menu-item"><span class="menu-item-name">Red &amp; Blue</span><span class="menu-item-price">Rs 895</span></div>
+          <div class="menu-item"><span class="menu-item-name">Berry Lagoon</span><span class="menu-item-price">Rs 1,195</span></div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">✦</span>
+        <div class="menu-cat-label">Blended</div>
+        <div class="menu-cat-name">Shakes</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Nutella Shake</span><span class="menu-item-price">Rs 780</span></div>
+          <div class="menu-item"><span class="menu-item-name">Lotus Shake</span><span class="menu-item-price">Rs 950</span></div>
+          <div class="menu-item"><span class="menu-item-name">Strawberry Shake</span><span class="menu-item-price">Rs 750</span></div>
+          <div class="menu-item"><span class="menu-item-name">Oreo Shake</span><span class="menu-item-price">Rs 755</span></div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">◆</span>
+        <div class="menu-cat-label">Fresh &amp; Zesty</div>
+        <div class="menu-cat-name">Lemonades &amp; Coolers</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Mint Lemonade</span><span class="menu-item-price">Rs 695</span></div>
+          <div class="menu-item"><span class="menu-item-name">Strawberry Lemonade</span><span class="menu-item-price">Rs 695</span></div>
+          <div class="menu-item"><span class="menu-item-name">Green Apple Lemonade</span><span class="menu-item-price">Rs 695</span></div>
+          <div class="menu-item"><span class="menu-item-name">Piña Colada</span><span class="menu-item-price">Rs 895</span></div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <span class="menu-cat-icon">✧</span>
+        <div class="menu-cat-label">Hot &amp; Iced</div>
+        <div class="menu-cat-name">Tea</div>
+        <div class="menu-items">
+          <div class="menu-item"><span class="menu-item-name">Peach Iced Tea</span><span class="menu-item-price">Rs 645</span></div>
+          <div class="menu-item"><span class="menu-item-name">Lemon Iced Tea</span><span class="menu-item-price">Rs 495</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section class="experience" id="experience">
+  <div class="exp-inner">
+    <p class="section-label reveal">Why Chérie</p>
+    <h2 class="section-title reveal">An Experience <em>Beyond the Plate</em></h2>
+    <p class="section-intro reveal">Every visit is thoughtfully orchestrated — from ambiance to service, each element elevates your evening into something extraordinary.</p>
+
+    <div class="exp-grid reveal">
+      <div class="exp-item">
+        <span class="exp-icon">✦</span>
+        <h3>Intimate Ambiance</h3>
+        <p>Warmly lit spaces designed for connection, celebration, and quiet romance in the heart of DHA.</p>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">◈</span>
+        <h3>Artisan Kitchen</h3>
+        <p>Our chefs bring global techniques to locally inspired ingredients — every plate is a story.</p>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">◆</span>
+        <h3>Private Events</h3>
+        <p>Bespoke setups for birthdays, anniversaries, and corporate dinners crafted around your vision.</p>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">✧</span>
+        <h3>Late Night Dining</h3>
+        <p>Open until 1 AM — because the finest evenings don't follow a curfew. Karachi never sleeps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section class="gallery-strip" id="gallery">
+  <div class="gallery-strip-inner">
+    <p class="section-label reveal">Inside Chérie</p>
+  </div>
+  <div class="gallery-track reveal" style="max-width:1100px; margin:0 auto; padding:0 2rem;">
+    <!-- Tile 1: Dining room -->
+    <div class="gallery-tile">
+      <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="260" fill="#F0EAE0"/>
+        <rect x="20" y="20" width="160" height="220" fill="#E8DDD0"/>
+        <!-- Table -->
+        <ellipse cx="100" cy="170" rx="50" ry="18" fill="#C4A882" opacity="0.4"/>
+        <rect x="80" y="162" width="40" height="6" rx="1" fill="#B8924A" opacity="0.5"/>
+        <!-- Candles -->
+        <rect x="96" y="140" width="4" height="22" rx="1" fill="#EDD9A3"/>
+        <ellipse cx="98" cy="138" rx="3" ry="4" fill="#B8924A" opacity="0.7"/>
+        <!-- Chairs hint -->
+        <rect x="55" y="155" width="18" height="12" rx="2" fill="#C4A882" opacity="0.5"/>
+        <rect x="127" y="155" width="18" height="12" rx="2" fill="#C4A882" opacity="0.5"/>
+        <!-- Arch window -->
+        <path d="M60 60 Q60 30 100 30 Q140 30 140 60 L140 100 L60 100 Z" fill="#D4B896" opacity="0.4"/>
+        <text x="100" y="220" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#7A6A55" letter-spacing="3" opacity="0.7">DINING</text>
+      </svg>
+      <div class="gallery-tile-label">The Dining Room</div>
+    </div>
+    <!-- Tile 2: Bar -->
+    <div class="gallery-tile">
+      <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="260" fill="#1A1208"/>
+        <rect x="20" y="20" width="160" height="220" fill="#2E2416" opacity="0.8"/>
+        <!-- Bar counter -->
+        <rect x="20" y="160" width="160" height="20" rx="2" fill="#B8924A" opacity="0.3"/>
+        <!-- Glasses -->
+        <path d="M60 140 L57 160 L63 160" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.7"/>
+        <path d="M80 135 L77 160 L83 160" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.7"/>
+        <path d="M100 138 L97 160 L103 160" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.7"/>
+        <path d="M120 142 L117 160 L123 160" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.7"/>
+        <path d="M140 137 L137 160 L143 160" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.7"/>
+        <!-- Bottles on shelf -->
+        <rect x="30" y="80" width="140" height="2" fill="#B8924A" opacity="0.3"/>
+        <rect x="50" y="58" width="8" height="22" rx="2" fill="#B8924A" opacity="0.5"/>
+        <rect x="65" y="62" width="7" height="18" rx="2" fill="#D4A96A" opacity="0.4"/>
+        <rect x="78" y="55" width="9" height="25" rx="2" fill="#B8924A" opacity="0.45"/>
+        <rect x="94" y="60" width="7" height="20" rx="2" fill="#D4A96A" opacity="0.35"/>
+        <rect x="108" y="57" width="8" height="23" rx="2" fill="#B8924A" opacity="0.5"/>
+        <text x="100" y="220" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#B8924A" letter-spacing="3" opacity="0.7">THE BAR</text>
+      </svg>
+      <div class="gallery-tile-label">The Bar</div>
+    </div>
+    <!-- Tile 3: Plated dish -->
+    <div class="gallery-tile">
+      <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="260" fill="#FDF9F5"/>
+        <ellipse cx="100" cy="130" rx="70" ry="70" fill="#F0EAE0" stroke="#D4A96A" stroke-width="0.8"/>
+        <ellipse cx="100" cy="130" rx="55" ry="55" fill="#FDF9F5" stroke="#D4A96A" stroke-width="0.5" opacity="0.5"/>
+        <!-- food on plate -->
+        <ellipse cx="100" cy="130" rx="30" ry="20" fill="#C4A882" opacity="0.4"/>
+        <path d="M75 125 Q100 110 125 125 Q110 145 100 140 Q88 145 75 125Z" fill="#B8924A" opacity="0.35"/>
+        <circle cx="90" cy="122" r="4" fill="#D4A96A" opacity="0.6"/>
+        <circle cx="110" cy="118" r="3" fill="#D4A96A" opacity="0.5"/>
+        <circle cx="102" cy="138" r="2.5" fill="#D4A96A" opacity="0.4"/>
+        <!-- herb garnish -->
+        <path d="M85 115 Q88 108 92 112" stroke="#7A6A55" stroke-width="1" fill="none" opacity="0.5"/>
+        <path d="M115 120 Q118 113 122 117" stroke="#7A6A55" stroke-width="1" fill="none" opacity="0.5"/>
+        <text x="100" y="225" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#7A6A55" letter-spacing="3" opacity="0.7">ARTISAN PLATE</text>
+      </svg>
+      <div class="gallery-tile-label">Artisan Cuisine</div>
+    </div>
+    <!-- Tile 4: Outdoor/Terrace -->
+    <div class="gallery-tile">
+      <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="260" fill="#E8DDD0"/>
+        <!-- sky -->
+        <rect width="200" height="120" fill="#C4A882" opacity="0.3"/>
+        <!-- stars/lights -->
+        <circle cx="40" cy="40" r="1.5" fill="#B8924A" opacity="0.6"/>
+        <circle cx="80" cy="25" r="1" fill="#B8924A" opacity="0.5"/>
+        <circle cx="130" cy="35" r="1.5" fill="#B8924A" opacity="0.6"/>
+        <circle cx="165" cy="20" r="1" fill="#B8924A" opacity="0.4"/>
+        <!-- string lights -->
+        <path d="M20 60 Q50 55 80 60 Q110 65 140 60 Q170 55 180 60" stroke="#B8924A" stroke-width="0.8" fill="none" opacity="0.5"/>
+        <circle cx="50" cy="57" r="2" fill="#D4A96A" opacity="0.7"/>
+        <circle cx="80" cy="60" r="2" fill="#D4A96A" opacity="0.6"/>
+        <circle cx="110" cy="62" r="2" fill="#D4A96A" opacity="0.7"/>
+        <circle cx="140" cy="59" r="2" fill="#D4A96A" opacity="0.6"/>
+        <circle cx="165" cy="57" r="2" fill="#D4A96A" opacity="0.7"/>
+        <!-- tables outside -->
+        <ellipse cx="70" cy="180" rx="30" ry="10" fill="#B8924A" opacity="0.2"/>
+        <rect x="55" y="172" width="30" height="5" rx="1" fill="#B8924A" opacity="0.3"/>
+        <ellipse cx="140" cy="175" rx="25" ry="9" fill="#B8924A" opacity="0.2"/>
+        <rect x="127" y="168" width="26" height="5" rx="1" fill="#B8924A" opacity="0.3"/>
+        <text x="100" y="230" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#7A6A55" letter-spacing="3" opacity="0.7">TERRACE</text>
+      </svg>
+      <div class="gallery-tile-label">Terrace Seating</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="testimonials">
+  <p class="section-label reveal">Guest Reviews</p>
+  <h2 class="section-title reveal">Words from Our <em>Guests</em></h2>
+  <p class="section-intro reveal">Over 100 reviews and counting — because great food and genuine hospitality are always worth coming back to.</p>
+
+  <div class="test-grid reveal" style="max-width:1100px;margin:0 auto;">
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"An absolutely magical evening. The ambiance is unmatched in Karachi, and the food was extraordinary. We'll be celebrating every anniversary here."</p>
+      <div class="test-author">
+        <div class="test-avatar">SA</div>
+        <div>
+          <div class="test-name">Sara Ahmed</div>
+          <div class="test-date">DHA, Karachi</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"The wagyu ribeye was cooked to perfection. Service was attentive without being intrusive. Chérie has raised the bar for dining in Karachi."</p>
+      <div class="test-author">
+        <div class="test-avatar">FK</div>
+        <div>
+          <div class="test-name">Faisal Khan</div>
+          <div class="test-date">Clifton, Karachi</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★☆</div>
+      <p class="test-text">"We hosted our company dinner here and it was flawless. The private setup, the food, the staff — everything exceeded expectations. Highly recommended."</p>
+      <div class="test-author">
+        <div class="test-avatar">MR</div>
+        <div>
+          <div class="test-name">Maria Raza</div>
+          <div class="test-date">Gulshan, Karachi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESERVATION ─── -->
+<section class="reservation" id="reservation">
+  <div class="res-inner">
+    <p class="section-label reveal">Secure Your Seat</p>
+    <h2 class="section-title reveal">Reserve a <em>Table</em></h2>
+    <p class="section-intro reveal">Join us for an evening you won't forget. Call us directly at <a href="tel:03082355566" style="color:var(--gold);text-decoration:none;">+92 308 235 5566</a> or complete the form below.</p>
+
+    <div class="res-form reveal">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+92 3XX XXXXXXX">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <select id="guests">
+          <option>1 Guest</option>
+          <option selected>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5–6 Guests</option>
+          <option>7–10 Guests</option>
+          <option>Private Event (10+)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date">
+      </div>
+      <div class="form-group">
+        <label for="time">Preferred Time</label>
+        <select id="time">
+          <option>7:00 PM</option>
+          <option>7:30 PM</option>
+          <option>8:00 PM</option>
+          <option>8:30 PM</option>
+          <option>9:00 PM</option>
+          <option>9:30 PM</option>
+          <option>10:00 PM</option>
+          <option>10:30 PM</option>
+          <option>11:00 PM</option>
+          <option>11:30 PM</option>
+          <option>12:00 AM</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="occasion">Occasion</label>
+        <select id="occasion">
+          <option>Regular Dining</option>
+          <option>Birthday Celebration</option>
+          <option>Anniversary</option>
+          <option>Business Dinner</option>
+          <option>Engagement</option>
+          <option>Family Gathering</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="seating">Seating Preference</label>
+        <select id="seating">
+          <option>No Preference</option>
+          <option>Indoor — Main Dining</option>
+          <option>Terrace / Outdoor</option>
+          <option>Private Room</option>
+          <option>Window Table</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" placeholder="Dietary requirements, floral arrangements, cake, or any other special request…"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitReservation()">
+        Confirm Reservation Request
+      </button>
+    </div>
+    <p class="res-alt">Or call us directly: <a href="tel:03082355566">+92 308 235 5566</a></p>
+  </div>
+</section>
+
+<!-- ─── MAP / LOCATION ─── -->
+<section class="map-strip" id="location">
+  <div class="map-inner">
+    <div class="map-info reveal">
+      <p class="section-label" style="justify-content:flex-start;text-align:left;color:var(--gold-light);">Find Us</p>
+      <h2>Where to <em>Find Us</em></h2>
+      <div class="map-detail">
+        <span class="map-detail-icon">◆</span>
+        <div class="map-detail-text">
+          <strong>Address</strong>
+          Bukhari Commercial Area, Phase 6<br>Defence Housing Authority<br>Karachi, 75500, Pakistan
+        </div>
+      </div>
+      <div class="map-detail">
+        <span class="map-detail-icon">◈</span>
+        <div class="map-detail-text">
+          <strong>Phone</strong>
+          +92 308 235 5566
+        </div>
+      </div>
+      <div class="map-detail">
+        <span class="map-detail-icon">✦</span>
+        <div class="map-detail-text">
+          <strong>Hours</strong>
+          Open daily &nbsp;·&nbsp; Until 1:00 AM
+        </div>
+      </div>
+      <div class="map-detail">
+        <span class="map-detail-icon">✧</span>
+        <div class="map-detail-text">
+          <strong>Plus Code</strong>
+          Q3R7+QV Defence Housing Authority, Karachi
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=Cherie+Restaurant+Bukhari+Commercial+DHA+Phase+6+Karachi" target="_blank" class="map-cta">Get Directions →</a>
+    </div>
+
+    <div class="map-visual reveal">
+      <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="300" fill="#241C10"/>
+        <!-- grid streets -->
+        <line x1="0" y1="100" x2="400" y2="100" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="0" y1="150" x2="400" y2="150" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="0" y1="200" x2="400" y2="200" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="80" y1="0" x2="80" y2="300" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="160" y1="0" x2="160" y2="300" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="240" y1="0" x2="240" y2="300" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="320" y1="0" x2="320" y2="300" stroke="#B8924A" stroke-width="0.5" opacity="0.2"/>
+        <!-- main roads -->
+        <rect x="0" y="125" width="400" height="25" fill="#B8924A" opacity="0.08"/>
+        <rect x="155" y="0" width="30" height="300" fill="#B8924A" opacity="0.08"/>
+        <!-- blocks -->
+        <rect x="85" y="55" width="65" height="40" rx="2" fill="#B8924A" opacity="0.12"/>
+        <rect x="85" y="155" width="65" height="40" rx="2" fill="#B8924A" opacity="0.1"/>
+        <rect x="245" y="55" width="65" height="40" rx="2" fill="#B8924A" opacity="0.12"/>
+        <rect x="245" y="155" width="65" height="40" rx="2" fill="#B8924A" opacity="0.1"/>
+        <rect x="245" y="205" width="65" height="40" rx="2" fill="#B8924A" opacity="0.1"/>
+        <!-- restaurant marker -->
+        <circle cx="200" cy="150" r="20" fill="#B8924A" opacity="0.2"/>
+        <circle cx="200" cy="150" r="12" fill="#B8924A" opacity="0.5"/>
+        <circle cx="200" cy="150" r="5" fill="#D4A96A"/>
+        <!-- pulse ring -->
+        <circle cx="200" cy="150" r="28" stroke="#B8924A" stroke-width="0.8" opacity="0.3"/>
+        <!-- label -->
+        <text x="200" y="195" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" fill="#D4A96A" letter-spacing="2" opacity="0.9">CHÉRIE</text>
+        <text x="200" y="210" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="9" fill="#B8924A" letter-spacing="1.5" opacity="0.6">BUKHARI COMMERCIAL</text>
+        <!-- compass -->
+        <text x="370" y="278" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#B8924A" opacity="0.4">N</text>
+        <line x1="370" y1="258" x2="370" y2="268" stroke="#B8924A" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">Ché<em>rie</em></span>
+      <p>A destination for those who believe a great meal is one of life's finest pleasures. We look forward to welcoming you to our table.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="Facebook">fb</a>
+        <a href="#" aria-label="FoodPanda">fp</a>
+        <a href="tel:03082355566" aria-label="Phone">☎</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#reservation">Reservations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <p>Open daily<br>Until 1:00 AM<br><br>Late-night dining<br>always welcome</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>
+        Bukhari Commercial<br>
+        DHA Phase 6<br>
+        Karachi 75500<br><br>
+        <a href="tel:03082355566">+92 308 235 5566</a><br><br>
+        <a href="https://foodpanda.pk/restaurant/b9uo/cherie-restaurant" target="_blank">Order on FoodPanda</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Chérie Restaurant. All rights reserved.</span>
+    <span>DHA Phase 6, Karachi &nbsp;·&nbsp; ★ 4.4</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll shrink
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.padding = '1rem 4rem';
+    } else {
+      nav.style.padding = '1.5rem 4rem';
+    }
+  });
+
+  // Reservation toast
+  function submitReservation() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number to complete the reservation.');
+      return;
+    }
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+    // Reset form
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('requests').value = '';
+  }
+
+  // Set min date to today
+  const dateInput = document.getElementById('date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    dateInput.value = today;
+  }
+</script>
+</body>
+</html>
